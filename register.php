@@ -42,7 +42,7 @@
                     $_SESSION['user_id'] = $row['user_id'];
                     $_SESSION['user_name'] = $row['name'];
                     $_SESSION['user_email'] = $row['email'];
-                    header('location: login.php');
+                    header('location: home.php');
                 } 
             }
         }
@@ -60,7 +60,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caffio</title>
+    <title>Caffio - Registration Page</title>
     <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 
@@ -72,9 +72,9 @@
                 <h1>Register Now</h1>
                 <p>Your Journey to Wellness Starts Here - Register Now!</p>
             </div>
-            <form accept="" method="post">
+            <form action="" method="post">
                 <div class="input-field">
-                    <p>Your name <sub></sub></p>
+                    <p>Your Name <sub></sub></p>
                     <input type="text" name="name" required placeholder="Enter your name" maxlength="50">
                 </div>
 
@@ -86,7 +86,7 @@
                 </div>
                 <div class="input-field">
                     <p>Your Password <sub>*</sub></p>
-                    <input type="password" name="password" required placeholder="Enter your password" maxlength="50"
+                    <input type="password" name="pass" required placeholder="Enter your password" maxlength="50"
                         oninput="this.value = this.value.replace(/\s/g, '')">
                 </div>
 

@@ -3,6 +3,7 @@
     $user_name = 'root';
     $user_password = '';
     $conn = new PDO($db_name, $user_name, $user_password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     function unique_id() {
         $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';

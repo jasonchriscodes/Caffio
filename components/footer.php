@@ -1,17 +1,20 @@
 <?php
 if(isset($_POST['sub-btn'])) {
-    $email = $_POST['subemail'];
-    $email = filter_var($email, FILTER_SANITIZE_STRING);
+    $email = filter_var($_POST['subemail'], FILTER_VALIDATE_EMAIL);
 
-    $select_subscribers = $conn->prepare("SELECT * FROM `subscribers` WHERE user_id = ?");
-    $select_subscribers->execute([$user_id]);
-    
-    if ($select_subscribers->rowCount() > 0) {
-        $warning_msg[] = 'You are already subscribed!';
+    if(!$email) {
+        $warning_msg[] = 'Invalid email address!';
     } else {
-        $insert_subscribers = $conn->prepare("INSERT INTO `subscribers` (user_id, email) VALUES(?,?)");
-        $insert_subscribers->execute([$user_id, $email]);
-        $success_msg[] = 'Thank you for subscribing';
+        $select_subscribers = $conn->prepare("SELECT * FROM `subscribers` WHERE email = ?");
+        $select_subscribers->execute([$email]);
+
+        if ($select_subscribers->rowCount() > 0) {
+            $warning_msg[] = 'You are already subscribed!';
+        } else {
+            $insert_subscribers = $conn->prepare("INSERT INTO `subscribers` (user_id, email) VALUES(?,?)");
+            $insert_subscribers->execute([$user_id, $email]);
+            $success_msg[] = 'Thank you for subscribing!';
+        }
     }
 }
 
@@ -30,7 +33,7 @@ if(isset($_POST['sub-btn'])) {
         <h2><i class="bx bx-envelope"></i>Sign Up For Newsletter</h2>
         <form action="" method="post">
             <div class="input-field">
-                <input type="email" name="email" required placeholder="Enter your email" maxlength="50"
+                <input type="email" name="subemail" required placeholder="Enter your email" maxlength="50"
                     oninput="this.value = this.value.replace(/\s/g, '')">
                 <button type="submit" name="sub-btn" class="btn">Subscribe</button>
             </div>

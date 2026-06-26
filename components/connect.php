@@ -1,7 +1,7 @@
 <?php
-    $db_name = 'mysql:host=localhost;dbname=caffio_db';
-    $user_name = 'root';
-    $user_password = '';
+    $db_name = 'mysql:host=sql212.infinityfree.com;dbname=if0_42278858_caffio_db';
+    $user_name = 'if0_42278858';
+    $user_password = 'j1rh8OMYdKhUA';
     $conn = new PDO($db_name, $user_name, $user_password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

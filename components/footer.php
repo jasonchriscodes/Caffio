@@ -40,7 +40,7 @@ if(isset($_POST['sub-btn'])) {
     <footer>
         <div class="overlay"></div>
         <div class="footer-content">
-            <div class="inner=footer">
+            <div class="inner-footer">
                 <div class="card">
                     <h3>About Us</h3>
                     <ul>

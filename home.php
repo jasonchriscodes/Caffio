@@ -1,16 +1,18 @@
 <?php
     include './components/connect.php';
     session_start();
-    $user_id = $_SESSION['user_id'];
+    $user_id = $_SESSION['user_id'] ?? null;
 
     if(!isset($user_id)){
         header('location:login.php');
-    } 
+        exit;
+    }
 
     if(isset($_POST['logout'])){
         session_destroy();
         header('location:login.php');
-    } 
+        exit;
+    }
 
 ?>
 
@@ -37,14 +39,14 @@
     <div class="main">
         <section class="home-section">
             <div class="left-arrow"><i class="bx bxs-left-arrow"></i></div>
-            <div class="right-arrow"><i class="bx bxs-left-arrow"></i></div>
+            <div class="right-arrow"><i class="bx bxs-right-arrow"></i></div>
 
             <div class="slider">
                 <div class="slider__slider slider1">
                     <div class="slider-detail">
                         <h1>Pure Green Coffee</h1>
                         <p>Experience premium unroasted beans packed with antioxidants and natural vitality.</p>
-                        <a href="view_products.php" class="btn">Show Now</a>
+                        <a href="view_products.php" class="btn">Shop Now</a>
                     </div>
                     <div class="hero-dec-top"></div>
                     <div class="hero-dec-bottom"></div>
@@ -52,8 +54,8 @@
                 <div class="slider__slider slider2">
                     <div class="slider-detail">
                         <h1>Nature's Morning Boost</h1>
-                        <p>Embrace sustainable energy with out ethically sourced green coffee collection.</p>
-                        <a href="view_products.php" class="btn">Show Now</a>
+                        <p>Embrace sustainable energy with our ethically sourced green coffee collection.</p>
+                        <a href="view_products.php" class="btn">Shop Now</a>
                     </div>
                     <div class="hero-dec-top"></div>
                     <div class="hero-dec-bottom"></div>
@@ -62,7 +64,7 @@
                     <div class="slider-detail">
                         <h1>Wellness in Every Sip</h1>
                         <p>Discover how green coffee supports metabolism and overall vitality naturally.</p>
-                        <a href="view_products.php" class="btn">Show Now</a>
+                        <a href="view_products.php" class="btn">Shop Now</a>
                     </div>
                     <div class="hero-dec-top"></div>
                     <div class="hero-dec-bottom"></div>
@@ -71,7 +73,7 @@
                     <div class="slider-detail">
                         <h1>Farm to Cup Perfection</h1>
                         <p>Taste the difference of carefully selected, premium green coffee beans.</p>
-                        <a href="view_products.php" class="btn">Show Now</a>
+                        <a href="view_products.php" class="btn">Shop Now</a>
                     </div>
                     <div class="hero-dec-top"></div>
                     <div class="hero-dec-bottom"></div>
@@ -80,7 +82,7 @@
                     <div class="slider-detail">
                         <h1>Elevate Every Cup</h1>
                         <p>Join thousands who've discovered the remarkable benefits of green coffee.</p>
-                        <a href="view_products.php" class="btn">Show Now</a>
+                        <a href="view_products.php" class="btn">Shop Now</a>
                     </div>
                     <div class="hero-dec-top"></div>
                     <div class="hero-dec-bottom"></div>
@@ -119,14 +121,14 @@
                     <i class="bx bxs-coffee-bean icon"></i>
                     <div class="feature-content">
                         <h3>Coffee Grinder</h3>
-                        <p>Manage calls, calendar events, and personal contacts without reaching your device.</p>
+                        <p>Grind your beans fresh for maximum aroma and a richer, fuller flavor in every cup.</p>
                     </div>
                 </div>
                 <div class="feature">
                     <i class="bx bxs-coffee-togo icon"></i>
                     <div class="feature-content">
                         <h3>Coffee Cups</h3>
-                        <p>Controls management personal contacts without reaching phone offers</p>
+                        <p>Take your favorite brew with you in cups designed for comfort and convenience.</p>
                     </div>
                 </div>
             </div>
@@ -150,27 +152,27 @@
             </div>
             <div class="box-container">
                 <div class="box">
-                    <img src="./img/card.jgp" alt="">
+                    <img src="./img/card.jpg" alt="">
                     <a href="view_products.php" class="btn">Shop Now</a>
                 </div>
                 <div class="box">
-                    <img src="./img/card0.jgp" alt="">
+                    <img src="./img/card0.jpg" alt="">
                     <a href="view_products.php" class="btn">Shop Now</a>
                 </div>
                 <div class="box">
-                    <img src="./img/card1.jgp" alt="">
+                    <img src="./img/card1.jpg" alt="">
                     <a href="view_products.php" class="btn">Shop Now</a>
                 </div>
                 <div class="box">
-                    <img src="./img/card2.jgp" alt="">
+                    <img src="./img/card2.jpg" alt="">
                     <a href="view_products.php" class="btn">Shop Now</a>
                 </div>
                 <div class="box">
-                    <img src="./img/card3.jgp" alt="">
+                    <img src="./img/card3.jpg" alt="">
                     <a href="view_products.php" class="btn">Shop Now</a>
                 </div>
                 <div class="box">
-                    <img src="./img/card4.jgp" alt="">
+                    <img src="./img/card4.jpg" alt="">
                     <a href="view_products.php" class="btn">Shop Now</a>
                 </div>
             </div>
